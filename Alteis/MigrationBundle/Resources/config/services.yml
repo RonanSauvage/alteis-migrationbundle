@@ -1,0 +1,4 @@
+services:
+    alteis_migration.command:
+        class: Alteis\MigrationBundle\Command\MigrationCommand
+        arguments: ["database_name"]
