@@ -21,5 +21,4 @@
     "doctrine/doctrine-bundle": "~1.4",
     "rma/rmabdd_light": "0.4.*"
   },
-  "target-dir" : "Alteis/MigrationBundle"
 }
