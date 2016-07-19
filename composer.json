@@ -20,5 +20,5 @@
     "doctrine/orm": "^2.4.8",
     "doctrine/doctrine-bundle": "~1.4",
     "rma/rmabdd_light": "0.4.*"
-  },
+  }
 }
