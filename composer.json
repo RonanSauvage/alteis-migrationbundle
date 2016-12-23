@@ -1,25 +1,19 @@
 {
-  "name": "alteis/alteis-migrationbundle",
-  "license": "MIT",
-  "type": "symfony-bundle",
-  "description": "Bundle pour générer un dump de la base de données puis lancer une migration assurée par Doctrine Migrations",
-  "keywords": ["alteis migrations"],
-  "authors": [
-    {
-      "name": "Minh Anh NGUYEN",
-      "email": "manguyen@alteis.fr"
+    "name": "alteis/alteis-migrationbundle",
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "description": "Bundle pour gÃ©nÃ©rer un dump de la base de donnÃ©es puis lancer une migration assurÃ©e par Doctrine Migrations",
+    "keywords": ["alteis migrations"],
+    "autoload": {
+        "psr-0": { "Alteis\\MigrationBundle\\": "" }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.9",
+        "symfony/symfony": ">=2.8.6|<3.0",
+        "doctrine/orm": "^2.4.8",
+        "doctrine/doctrine-bundle": "~1.4",
+        "rma/rmabdd_light": "0.5.*",
+        "doctrine/doctrine-migrations-bundle": "^1.0"
     }
-  ],
-  "autoload": {
-    "psr-0": { "Alteis\\MigrationBundle\\": "" }
-  },
-  "minimum-stability": "dev",
-  "require": {
-    "php": ">=5.3.9",
-    "symfony/symfony": ">=2.8.6|<3.0",
-    "doctrine/orm": "^2.4.8",
-    "doctrine/doctrine-bundle": "~1.4",
-    "rma/rmabdd_light": "0.4.*",
-	"doctrine/doctrine-migrations-bundle": "^1.0"
-  }
 }

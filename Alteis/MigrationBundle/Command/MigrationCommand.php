@@ -3,8 +3,6 @@
 namespace Alteis\MigrationBundle\Command;
 use Alteis\MigrationBundle\Command\CommonCommand;
 use Symfony\Component\Console\Input\ArrayInput;
-use Symfony\Component\Console\Input\InputOption;
-use RMA\Bundle\DumpBundle\Command\DumpCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -24,7 +22,7 @@ class MigrationCommand extends CommonCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         /**
-         * Récupérer le nom de la base de données de l'application
+         * On récupère le nom de la base de données concernée par la migration pour ne dump que celle-ci
          */
         $db = $this->getContainer()->getParameter('database_name');
 
@@ -39,24 +37,25 @@ class MigrationCommand extends CommonCommand
         $arguments = array(
             'databases' => array($db)
         );
-        $input = new ArrayInput($arguments);
+        $inputRma = new ArrayInput($arguments);
 
         /**
          * Exécuter la commande rma dump
          */
-        $commandRma->run($input,$output);
+        $commandRma->run($inputRma,$output);
 
         /**
          * On prépare le nouvel input pour les commandes de doctrine migration
          */
-        $input = new ArrayInput(array());
+        $inputDoctrineMigration = new ArrayInput(array());
+        
         /**
          *Appel la commande migrate de migration bundle
          *
          */
         $commandDoctrineMigrate = $this->getApplication()->find('doctrine:migrations:migrate');
 
-        $commandDoctrineMigrate->run($input,$output);
+        $commandDoctrineMigrate->run($inputDoctrineMigration,$output);
 
     }
 }

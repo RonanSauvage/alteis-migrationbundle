@@ -1,9 +1,11 @@
 <?php
 namespace Alteis\MigrationBundle\Command;
+
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+
 class CommonCommand extends ContainerAwareCommand
 {
     protected function configure()
@@ -31,5 +33,4 @@ class CommonCommand extends ContainerAwareCommand
 
         $io->table($headers, $rows);
     }
-
 }
