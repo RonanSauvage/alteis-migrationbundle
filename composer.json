@@ -1,5 +1,5 @@
 {
-    "name": "alteis/alteis-migrationbundle",
+    "name": "alteis/migrationbundle",
     "license": "MIT",
     "type": "symfony-bundle",
     "description": "Bundle pour générer un dump de la base de données puis lancer une migration assurée par Doctrine Migrations",
